@@ -41,10 +41,7 @@ jobs:
       - name: Build APK
         run: |
           cd android
-          # Fix Windows line endings (CRLF) which cause "command not found" on Linux
-          sed -i 's/\r$//' gradlew
-          chmod +x gradlew
-          ./gradlew assembleDebug
+          gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
