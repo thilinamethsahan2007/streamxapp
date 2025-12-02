@@ -39,8 +39,9 @@ jobs:
         run: npx cap sync android
 
       - name: Build APK
-        working-directory: android
         run: |
+          ls -R
+          cd android
           chmod +x gradlew
           ./gradlew assembleDebug
 
